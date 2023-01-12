@@ -96,21 +96,21 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="spender (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="amount (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     Approve
                     </button>
@@ -132,14 +132,14 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="amount (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     Burn
                     </button>
@@ -161,21 +161,21 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="account (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="amount (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     BurnFrom
                     </button>
@@ -197,21 +197,21 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="spender (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="subtractedValue (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     DecreaseAllowance
                     </button>
@@ -233,21 +233,21 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="spender (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="addedValue (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     IncreaseAllowance
                     </button>
@@ -269,21 +269,21 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="to (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="amount (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     Transfer
                     </button>
@@ -306,28 +306,28 @@ class WriteContract extends React.Component {
             >
               <div class="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="from (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="to (address)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <input
                       type="number"
                       className="form-control"
                       placeholder="amount (uint256)"
                     />
                   </div>
-                  <div className="col-sm-12">
+                  <div className="col-sm-12 card-col">
                     <button type="button" className="btn btn-success">
                     TransferFrom
                     </button>
