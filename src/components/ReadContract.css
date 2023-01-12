@@ -1,0 +1,26 @@
+.link:active{
+    background: transparent;
+    color: #fff;
+}
+.link:focus{
+    color: #fff;
+}
+.link:hover{
+    color: #fff;
+}
+.link{
+    background: #ff880e;
+    font-size: 17px;
+    font-weight: 400;
+    width: 180px;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    padding: 10px 30px;
+    border-radius: 75px;
+    color: #000;
+    font-weight: 300;
+}
+.col-link{
+    padding: 1rem;
+}

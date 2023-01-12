@@ -1,9 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import KmutnbToken from "./abis/KmutnbToken.json";
 import Web3 from "web3";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import ReadContract from "./components/ReadContract";
+import WriteContract from "./components/WriteContract";
 
 class App extends React.Component {
   async componentWillMount() {
@@ -38,9 +40,11 @@ class App extends React.Component {
       this.setState({kmutnbToken : kmutnbToken});
       const balance = await kmutnbToken.methods.balanceOf(accounts[0]).call({from:accounts[0]});
       const total = await kmutnbToken.methods.totalSupply().call({from:accounts[0]});
+      const name = await kmutnbToken.methods.name().call({from:accounts[0]});
       this.setState({
         balanceOf:balance,
-        totalSupply:total
+        totalSupply:total,
+        SName: name,
       });
       console.log(kmutnbToken);
     }
@@ -51,7 +55,8 @@ class App extends React.Component {
       account : "",
       kmutnbToken : "",
       balanceOf:0,
-      totalSupply:0
+      totalSupply:0,
+      SName:""
     };
   }
   currencyFormat(num) {
@@ -61,23 +66,10 @@ class App extends React.Component {
     return (
       <>
         <Header/>
-        <Home/>
-        {/* <div className="App"> */}
-        
-          <h1>KMUTNB BANK ERC20</h1>
-          <h5>
-            ทำความรู้จักร ERC20 มาตราฐาน Token และสิ่งที่ต้องเตรียมมีดังนี้ :
-          </h5>
-          <li style={{ background: "red" }}>
-            npx create-react-app ตามด้วยชื่อโปรเจ็ค
-          </li>
-          <li>Package เสริมที่จำเป็นต้องใช้ในโปรเจ็ค</li>
-          <li>
-            เรียนรู้วิธี Setup config ต่างๆเพื่อเตรียมใช้ smart contract กัน
-          </li>
-          <li>BalanceOf : {this.currencyFormat(this.state.balanceOf)}</li>
-          <li>TotalSupply : {this.currencyFormat(this.state.totalSupply)}</li>
-        {/* </div> */}
+        <Routes>
+          <Route path="/" element={<ReadContract/>} />
+          <Route path="/write" element={<WriteContract/>} />
+        </Routes>
         <Footer/>
       </>
     );

@@ -10,26 +10,26 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <footer class="footer-box">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 white_fonts">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="full">
+        <footer className="footer-box">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 white_fonts">
+                <div className="row">
+                  <div className="col-sm-6 col-md-6 col-lg-3">
+                    <div className="full">
                       <img
-                        class="img-responsive"
-                        src="../currency-exchange/images/footer_logo.png"
+                        className="logofooter"
+                        src="../currency-exchange/images/kmutnb.jpg"
                         alt="#"
                       />
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="full">
+                  <div className="col-sm-6 col-md-6 col-lg-3">
+                    <div className="full">
                       <h3>Quick Links</h3>
                     </div>
-                    <div class="full">
-                      <ul class="menu_footer">
+                    <div className="full">
+                      <ul className="menu_footer">
                         <li>
                           <a href="home.html"> Home</a>
                         </li>
@@ -51,15 +51,15 @@ class Footer extends React.Component {
                       </ul>
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="full">
-                      <div class="footer_blog full white_fonts">
+                  <div className="col-sm-6 col-md-6 col-lg-3">
+                    <div className="full">
+                      <div className="footer_blog full white_fonts">
                         <h3>Newsletter</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do
                         </p>
-                        <div class="newsletter_form">
+                        <div className="newsletter_form">
                           <form action="index.html">
                             <input
                               type="email"
@@ -73,11 +73,11 @@ class Footer extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="full">
-                      <div class="footer_blog full white_fonts">
+                  <div className="col-sm-6 col-md-6 col-lg-3">
+                    <div className="full">
+                      <div className="footer_blog full white_fonts">
                         <h3>Contact us</h3>
-                        <ul class="full">
+                        <ul className="full">
                           <li>
                             <img src="../currency-exchange/images/i5.png" />
                             <span>
@@ -105,18 +105,18 @@ class Footer extends React.Component {
         </footer>
         {/* <!-- End Footer --> */}
 
-        <div class="footer_bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <p class="crp">© Copyrights 2019 design by html.design</p>
+        <div className="footer_bottom">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <p className="crp">© Copyrights 2019 design by html.design</p>
               </div>
             </div>
           </div>
         </div>
 
-        <a href="#" id="scroll-to-top" class="hvr-radial-out">
-          <i class="fa fa-angle-up"></i>
+        <a href="#" id="scroll-to-top" className="hvr-radial-out">
+          <i className="fa fa-angle-up"></i>
         </a>
       </>
     );

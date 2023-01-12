@@ -204,6 +204,11 @@ button:focus {
 	width: 120px;
 	max-width: 120px;
 }
+.logofooter{
+	width: 120px;
+	max-width: 120px;
+	border-radius: 15px;
+}
 .pogoSlider-img{
 	background-image: url("../images/slide_img.png");
 }
