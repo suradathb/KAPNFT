@@ -1,8 +1,7 @@
 import React from "react";
 import Web3Service from "./web3.server";
 
-
-class Transfer extends React.Component {
+class BurnFrom extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,28 +11,26 @@ class Transfer extends React.Component {
       amount: 0,
     };
   }
- async componentDidMount(){
-   await Web3Service.loadWeb3();
-   await Web3Service.loadBlockchainData();
-   console.log(Web3Service.state.kmutnbToken);
+
+  async componentDidMount() {
+    await Web3Service.loadWeb3();
+    await Web3Service.loadBlockchainData();
+    // console.log(Web3Service.state.kmutnbToken);
     this.setState({
-        account:Web3Service.state.account,
-        kmutnbToken:Web3Service.state.kmutnbToken
+      account: Web3Service.state.account,
+      kmutnbToken: Web3Service.state.kmutnbToken,
     });
   }
-  currencyFormat(num) {
-    return Intl.NumberFormat().format(num);
-  }
-  createTransfer() {
+  createBurnFrom() {
     // console.log(this.state.address)
     this.state.kmutnbToken.methods
-      .transfer(this.state.address,this.state.amount)
+      .burnFrom(this.state.address,this.state.amount)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
         console.log("BurnSusess", this.state.account, ":", this.state.amount);
         window.location.reload();
       });
-  };
+  }
   render() {
     return (
       <>
@@ -41,31 +38,31 @@ class Transfer extends React.Component {
           role="form"
           onSubmit={(event) => {
             event.preventDefault();
-            this.createTransfer(this.state);
+            this.createBurnFrom(this.state);
           }}
         >
-          <div className="card">
-            <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseSix">
-                6.Transfer(to,amount)
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseTree">
+                3.BurnFrom(address,uint256)
               </a>
             </div>
             <div
-              id="collapseSix"
-              className="collapse hide"
+              id="collapseTree"
+              class="collapse hide"
               data-parent="#accordion"
             >
-              <div className="card-body">
+              <div class="card-body">
                 <div className="row">
                   <div className="col-sm-12 card-col">
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="to (address)"
+                      placeholder="account (address)"
                       name="address"
                       value={this.state.address}
                       onChange={(event) => {
-                        this.setState({address : event.target.value});
+                        this.setState({ address: event.target.value });
                       }}
                     />
                   </div>
@@ -76,14 +73,18 @@ class Transfer extends React.Component {
                       placeholder="amount (uint256)"
                       name="amount"
                       value={this.state.amount}
-                      onChange = {(event) => {
-                        this.setState({amount : event.target.value});
+                      onChange={(event) => {
+                        this.setState({ amount: event.target.value });
                       }}
                     />
                   </div>
                   <div className="col-sm-12 card-col">
-                    <input type="submit" value="Transfer" className="btn btn-success"/>
-                    <p><h4>Transfer(address indexed from, address indexed to, uint tokens)</h4>เป็น event ที่ถูกเรียก เมื่อโอนเกิดขึ้น มาตรฐานบังคับให้ใส่ emit Transfer() ในฟังชั่น transfer() และ transferFrom() ด้วย</p>
+                    <input
+                      type="submit"
+                      value="BurnFrom"
+                      className="btn btn-success"
+                    />
+                    <p><h4>BurnFrom(address,uint256)</h4> address ของผู้อนุมัติ Approve ให้วงเงินจากเช็คที่รับ จะสามารถ BurnFrom ได้จากฟังชั่นนี้</p>
                   </div>
                 </div>
               </div>
@@ -95,4 +96,4 @@ class Transfer extends React.Component {
   }
 }
 
-export default Transfer;
+export default BurnFrom;

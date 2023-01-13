@@ -1,47 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import KmutnbToken from "../abis/KmutnbToken.json";
-import Web3 from "web3";
+import Web3Service from "./web3.server";
 import "./Header.css";
+
 class Header extends React.Component {
-  async componentWillMount() {
-    await this.loadWeb3();
-    await this.loadBlockchainData();
-  }
-  async loadWeb3() {
-    if (window.web3) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-    } else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider);
-    } else {
-      window.alert(
-        "Non-Ethereum browser detected. You should consider trying MetaMask!"
-      );
-    }
-  }
-  async loadBlockchainData() {
-    if (window.web3) {
-      const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
-      this.setState({ account: accounts[0] });
-      const networkId = await web3.eth.net.getId();
-      const networkData = KmutnbToken.networks[networkId];
-      // console.log(accounts[0],networkId,networkData);
-      const abi = KmutnbToken.abi;
-      const address = networkData.address;
-      const kmutnbToken = new web3.eth.Contract(abi, address);
-      this.setState({ kmutnbToken: kmutnbToken });
-      const balance = await kmutnbToken.methods
-        .balanceOf(accounts[0])
-        .call({ from: accounts[0] });
-      this.setState({
-        balanceOf: balance,
-      });
-      console.log(kmutnbToken);
-    }
+  async componentDidMount() {
+    await Web3Service.loadWeb3();
+    await Web3Service.loadBlockchainData();
+    const balanceOf = await Web3Service.state.kmutnbToken.methods
+      .balanceOf(Web3Service.state.account)
+      .call({ from: Web3Service.state.account });
+    this.setState({
+      account: Web3Service.state.account,
+      kmutnbToken: Web3Service.state.kmutnbToken,
+      balanceOf: balanceOf,
+    });
   }
   constructor(props) {
     super(props);
@@ -73,7 +46,9 @@ class Header extends React.Component {
                 <div className="site_information-head">
                   <ul>
                     <li className="nav-link-head">
-                      <h3>Token : {this.currencyFormat(this.state.balanceOf)} wei</h3>
+                      <h3>
+                        Token : {this.currencyFormat(this.state.balanceOf)} wei
+                      </h3>
                     </li>
                   </ul>
                 </div>
@@ -130,44 +105,37 @@ class Header extends React.Component {
                         <ul className="navbar-nav">
                           <li>
                             <Link className="nav-link active" to="/">
-                              Home
+                              Smart Contract
                             </Link>
                           </li>
                           <li>
-                            <a className="nav-link" href="about.html">
-                              About
-                            </a>
+                            <Link className="nav-link" to="/erc20">
+                              ERC20
+                            </Link>
                           </li>
                           <li>
                             <a className="nav-link" href="exchange.html">
-                              Exchange
+                              Example
                             </a>
                           </li>
-                          <li>
-                            <a className="nav-link" href="services.html">
-                              Services
-                            </a>
-                          </li>
-                          <li>
-                            <a className="nav-link" href="new.html">
-                              News
-                            </a>
-                          </li>
-                          <li>
-                            <a className="nav-link" href="contact.html">
-                              Contact
-                            </a>
-                          </li>
+                          
                         </ul>
                       </div>
                     </div>
                   </nav>
                   <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Search"/>
+                    <input
+                      type="text"
+                      class="search-txt"
+                      placeholder="Search"
+                    />
                     <a class="search-btn">
-                        <img src="../currency-exchange/images/search_icon.png" alt="#" />
+                      <img
+                        src="../currency-exchange/images/search_icon.png"
+                        alt="#"
+                      />
                     </a>
-                </div> 
+                  </div>
                 </div>
               </div>
             </div>

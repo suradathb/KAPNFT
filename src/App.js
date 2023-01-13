@@ -6,57 +6,35 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ReadContract from "./components/ReadContract";
 import WriteContract from "./components/WriteContract";
+import Web3Service from "./components/web3.server";
+import Abount from "./components/Abount";
 
 class App extends React.Component {
-  async componentWillMount() {
-    await this.loadWeb3();
-    await this.loadBlockchainData();
-  }
-  async loadWeb3() {
-    if (window.web3) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-    } else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider);
-    } else {
-      window.alert(
-        "Non-Ethereum browser detected. You should consider trying MetaMask!"
-      );
-    }
-  }
-  async loadBlockchainData() {
-    if (window.web3) {
-      const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
-      this.setState({ account: accounts[0] });
-      const networkId = await web3.eth.net.getId();
-      const networkData = KmutnbToken.networks[networkId];
-      // console.log(accounts[0],networkId,networkData);
-      const abi = KmutnbToken.abi;
-      const address = networkData.address;
-      const kmutnbToken = new web3.eth.Contract(abi,address);
-      this.setState({kmutnbToken : kmutnbToken});
-      const balance = await kmutnbToken.methods.balanceOf(accounts[0]).call({from:accounts[0]});
-      const total = await kmutnbToken.methods.totalSupply().call({from:accounts[0]});
-      const name = await kmutnbToken.methods.name().call({from:accounts[0]});
-      this.setState({
-        balanceOf:balance,
-        totalSupply:total,
-        SName: name,
-      });
-      console.log(kmutnbToken);
-    }
+  async componentDidMount() {
+    await Web3Service.loadWeb3();
+    await Web3Service.loadBlockchainData();
+    const balanceOf = await Web3Service.state.kmutnbToken.methods
+      .balanceOf(Web3Service.state.account)
+      .call({ from: Web3Service.state.account });
+    const totalSupply = await Web3Service.state.kmutnbToken.methods.totalSupply().call({from:Web3Service.state.account});
+    const name = await Web3Service.state.kmutnbToken.methods.name().call({from:Web3Service.state.account});
+    
+    this.setState({
+      account: Web3Service.state.account,
+      kmutnbToken: Web3Service.state.kmutnbToken,
+      balanceOf: balanceOf,
+      totalSupply:totalSupply,
+      SName:name
+    });
   }
   constructor(props) {
     super(props);
     this.state = {
-      account : "",
-      kmutnbToken : "",
-      balanceOf:0,
-      totalSupply:0,
-      SName:""
+      account: "",
+      kmutnbToken: "",
+      balanceOf: 0,
+      totalSupply: 0,
+      SName: "",
     };
   }
   currencyFormat(num) {
@@ -65,12 +43,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header/>
+        <Header />
         <Routes>
-          <Route path="/" element={<ReadContract/>} />
-          <Route path="/write" element={<WriteContract/>} />
+          <Route path="/" element={<ReadContract />} />
+          <Route path="/write" element={<WriteContract />} />
+          <Route path="/erc20" element={<Abount/>}/>
         </Routes>
-        <Footer/>
+        <Footer />
       </>
     );
   }

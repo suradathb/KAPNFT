@@ -1,0 +1,44 @@
+pre[class*=language-] {
+    background: #f5f2f0;
+}
+pre[class*=language-] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+}
+
+code[class*=language-], pre[class*=language-] {
+    color: #000;
+    background: 0 0;
+    text-shadow: 0 1px #fff;
+    font-family: Consolas,Monaco,andale mono,ubuntu mono,monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap!important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+pre, code, kbd, samp, var {
+    font-family: Consolas,lucida console,liberation mono,dejavu sans mono,bitstream vera sans mono,courier new,monospace,sans-serif;
+}
+
+.token.atrule, .token.attr-value, .token.keyword {
+    color: #07a;
+}

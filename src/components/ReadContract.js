@@ -1,62 +1,38 @@
 import React from "react";
-import KmutnbToken from "../abis/KmutnbToken.json";
-import Web3 from "web3";
 import { Link } from "react-router-dom";
+import Allowance from "./Allowance";
 import "./ReadContract.css";
+import Web3Service from "./web3.server";
 
 class ReadContract extends React.Component {
-  async componentWillMount() {
-    await this.loadWeb3();
-    await this.loadBlockchainData();
-  }
-  async loadWeb3() {
-    if (window.web3) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-    } else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider);
-    } else {
-      window.alert(
-        "Non-Ethereum browser detected. You should consider trying MetaMask!"
-      );
-    }
-  }
-  async loadBlockchainData() {
-    if (window.web3) {
-      const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
-      this.setState({ account: accounts[0] });
-      const networkId = await web3.eth.net.getId();
-      const networkData = KmutnbToken.networks[networkId];
-      // console.log(accounts[0],networkId,networkData);
-      const abi = KmutnbToken.abi;
-      const address = networkData.address;
-      const kmutnbToken = new web3.eth.Contract(abi, address);
-      this.setState({ kmutnbToken: kmutnbToken });
-      const balance = await kmutnbToken.methods
-        .balanceOf(accounts[0])
-        .call({ from: accounts[0] });
-      const total = await kmutnbToken.methods
-        .totalSupply()
-        .call({ from: accounts[0] });
-      const name = await kmutnbToken.methods.name().call({ from: accounts[0] });
-      const Symbols = await kmutnbToken.methods
-        .symbol()
-        .call({ from: accounts[0] });
-      const decimal = await kmutnbToken.methods
-        .decimals()
-        .call({ from: accounts[0] });
-      this.setState({
-        balanceOf: balance,
-        totalSupply: total,
-        SName: name,
-        SSymbols: Symbols,
-        decinals: decimal,
-      });
-      console.log(kmutnbToken);
-    }
+  async componentDidMount() {
+    await Web3Service.loadWeb3();
+    await Web3Service.loadBlockchainData();
+    const balanceOf = await Web3Service.state.kmutnbToken.methods
+      .balanceOf(Web3Service.state.account)
+      .call({ from: Web3Service.state.account });
+    const names = await Web3Service.state.kmutnbToken.methods
+      .name()
+      .call({ from: Web3Service.state.account });
+    const symbols = await Web3Service.state.kmutnbToken.methods
+      .symbol()
+      .call({ from: Web3Service.state.account });
+    const decimal = await Web3Service.state.kmutnbToken.methods
+      .decimals()
+      .call({ from: Web3Service.state.account });
+    const totalSupply = await Web3Service.state.kmutnbToken.methods
+      .totalSupply()
+      .call({ from: Web3Service.state.account });
+    // console.log(Web3Service.state.kmutnbToken);
+    this.setState({
+      account: Web3Service.state.account,
+      kmutnbToken: Web3Service.state.kmutnbToken,
+      balanceOf: balanceOf,
+      SName: names,
+      SSymbols: symbols,
+      decinals: decimal,
+      totalSupply: totalSupply,
+    });
   }
   constructor(props) {
     super(props);
@@ -76,59 +52,19 @@ class ReadContract extends React.Component {
   render() {
     return (
       <>
-        <div className="ulockd-home-slider">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="pogoSlider" id="js-main-slider">
-                <div
-                  className="pogoSlider-slide pogoSlider-img"
-                  //   style={{background-image:"url(images/slide_img.png)"}}
-                >
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="slide_text white_fonts">
-                          <h3>
-                            Kmutnb & เหรียญเพื่อทดสอบ
-                            <br />
-                            <strong>KMUTNB</strong>
-                          </h3>
-                          <br />
-                          <a className="start_exchange_bt" href="exchange.html">
-                            Start Exchange
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="pogoSlider-slide pogoSlider-img"
-                  //   style={background-image:url("images/slide_img.png")}
-                >
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="slide_text white_fonts">
-                          <h3>
-                            Kmutnb & เหรียญเพื่อทดสอบ
-                            <br />
-                            <strong>KMUTNB</strong>
-                          </h3>
-                          <br />
-                          <a className="start_exchange_bt" href="exchange.html">
-                            Start Exchange
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        {/* <!-- Start Banner --> */}
+        <div class="section inner_page_banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="banner_title">
+                  <h3>KMUTNB ICO Read Contract</h3>
                 </div>
               </div>
-              {/* <!-- .pogoSlider --> */}
             </div>
           </div>
         </div>
+        {/* <!-- End Banner --> */}
 
         <form className="col-md-12">
           <div className="row">
@@ -158,38 +94,32 @@ class ReadContract extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              <tr>
-                  <th scope="row">1</th>
-                  <td>allowance(owner,apender)</td>
-                  <td>ตรวจสอบยอดเช็ค Token</td>
-                  <td>{this.currencyFormat(this.state.balanceOf)}</td>
-                </tr>
                 <tr>
-                  <th scope="row">2</th>
+                  <th scope="row">1</th>
                   <td>BalanceOf(address)</td>
                   <td>จำนวน Token ทั้งหมดที่ address นั้นมี</td>
                   <td>{this.currencyFormat(this.state.balanceOf)}</td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
+                  <th scope="row">2</th>
                   <td>Decimals()</td>
                   <td>หน่วยทศนิยม Token</td>
                   <td>{this.currencyFormat(this.state.decinals)}</td>
                 </tr>
                 <tr>
-                  <th scope="row">4</th>
+                  <th scope="row">3</th>
                   <td>Name()</td>
                   <td>ชื่อเต็มของ Token </td>
                   <td>{this.state.SName}</td>
                 </tr>
                 <tr>
-                  <th scope="row">5</th>
+                  <th scope="row">4</th>
                   <td>Symbol()</td>
                   <td>ชื่อย่อของ Token </td>
                   <td>{this.state.SSymbols}</td>
                 </tr>
                 <tr>
-                  <th scope="row">6</th>
+                  <th scope="row">5</th>
                   <td>TotalSupply()</td>
                   <td>จำนวน Token ทั้งหมดในระบบ</td>
                   <td>{this.currencyFormat(this.state.totalSupply)}</td>
@@ -198,6 +128,9 @@ class ReadContract extends React.Component {
             </table>
           </div>
         </form>
+        <div id="accordion">
+          <Allowance/>
+        </div>
       </>
     );
   }
