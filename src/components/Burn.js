@@ -41,15 +41,15 @@ class Burn extends React.Component {
                 this.createBurn(this.state);
               }}
             >
-              <div class="card">
-                <div class="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+              <div className="card">
+                <div className="card-header">
+                  <a className="card-link" data-toggle="collapse" href="#collapseTwo">
                   2.Burn(uint256)
                   </a>
                 </div>
                 <div
                   id="collapseTwo"
-                  class="collapse hide"
+                  className="collapse hide"
                   data-parent="#accordion"
                 >
                   <div class="card-body">

@@ -49,18 +49,18 @@ class TransferFrom extends React.Component {
           // }}
           onSubmit={this.handleSubmit}
         >
-          <div class="card">
-            <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseSeven">
+          <div className="card">
+            <div className="card-header">
+              <a className="card-link" data-toggle="collapse" href="#collapseSeven">
                 7.TransferFrom(from,to,amount)
               </a>
             </div>
             <div
               id="collapseSeven"
-              class="collapse hide"
+              className="collapse hide"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <div className="row">
                   <div className="col-sm-12 card-col">
                     <p>

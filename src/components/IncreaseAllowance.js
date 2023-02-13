@@ -46,15 +46,15 @@ class IncreaseAllowance extends React.Component {
             this.createIncreaseAllowance(this.state);
           }}
         >
-          <div class="card">
-            <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseFive">
+          <div className="card">
+            <div className="card-header">
+              <a className="card-link" data-toggle="collapse" href="#collapseFive">
               5.IncreaseAllowance(spender,addedValue)
               </a>
             </div>
             <div
               id="collapseFive"
-              class="collapse hide"
+              className="collapse hide"
               data-parent="#accordion"
             >
               <div class="card-body">

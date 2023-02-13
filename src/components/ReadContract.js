@@ -53,11 +53,11 @@ class ReadContract extends React.Component {
     return (
       <>
         {/* <!-- Start Banner --> */}
-        <div class="section inner_page_banner">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="banner_title">
+        <div className="section inner_page_banner">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="banner_title">
                   <h3>KMUTNB ICO Read Contract</h3>
                 </div>
               </div>

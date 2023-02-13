@@ -123,13 +123,13 @@ class Header extends React.Component {
                       </div>
                     </div>
                   </nav>
-                  <div class="search-box">
+                  <div className="search-box">
                     <input
                       type="text"
-                      class="search-txt"
+                      className="search-txt"
                       placeholder="Search"
                     />
-                    <a class="search-btn">
+                    <a className="search-btn">
                       <img
                         src="../currency-exchange/images/search_icon.png"
                         alt="#"

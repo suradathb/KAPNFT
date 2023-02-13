@@ -41,15 +41,15 @@ class BurnFrom extends React.Component {
             this.createBurnFrom(this.state);
           }}
         >
-          <div class="card">
-            <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseTree">
+          <div className="card">
+            <div className="card-header">
+              <a className="card-link" data-toggle="collapse" href="#collapseTree">
                 3.BurnFrom(address,uint256)
               </a>
             </div>
             <div
               id="collapseTree"
-              class="collapse hide"
+              className="collapse hide"
               data-parent="#accordion"
             >
               <div class="card-body">

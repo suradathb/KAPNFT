@@ -41,18 +41,18 @@ class DecreaseAllowance extends React.Component {
             this.createDecreaseAllowance(this.state);
           }}
         >
-          <div class="card">
-            <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseFour">
+          <div className="card">
+            <div className="card-header">
+              <a className="card-link" data-toggle="collapse" href="#collapseFour">
                 4.DecreaseAllowance(spender,subtractedValue)
               </a>
             </div>
             <div
               id="collapseFour"
-              class="collapse hide"
+              className="collapse hide"
               data-parent="#accordion"
             >
-              <div class="card-body">
+              <div className="card-body">
                 <div className="row">
                   <div className="col-sm-12 card-col">
                     <input

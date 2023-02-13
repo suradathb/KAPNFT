@@ -41,15 +41,15 @@ class Approve extends React.Component {
             this.createApprove(this.state);
           }}
         >
-          <div class="card">
-            <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          <div className="card">
+            <div className="card-header">
+              <a className="card-link" data-toggle="collapse" href="#collapseOne">
                 1.Approve(address,uint256)
               </a>
             </div>
             <div
               id="collapseOne"
-              class="collapse hide"
+              className="collapse hide"
               data-parent="#accordion"
             >
               <div class="card-body">
