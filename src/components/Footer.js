@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -31,22 +32,13 @@ class Footer extends React.Component {
                     <div className="full">
                       <ul className="menu_footer">
                         <li>
-                          <a href="home.html"> Home</a>
+                          <Link to="/">Smart Contract</Link>
                         </li>
                         <li>
-                          <a href="about.html"> About</a>
+                          <Link to="/erc20">ERC20</Link>
                         </li>
                         <li>
-                          <a href="exchange.html"> Exchange</a>
-                        </li>
-                        <li>
-                          <a href="services.html"> Services</a>
-                        </li>
-                        <li>
-                          <a href="new.html"> New</a>
-                        </li>
-                        <li>
-                          <a href="contact.html"> Contact</a>
+                          <a href="exchange.html"> Example</a>
                         </li>
                       </ul>
                     </div>
@@ -81,18 +73,18 @@ class Footer extends React.Component {
                           <li>
                             <img src="../currency-exchange/images/i5.png" />
                             <span>
-                              London 145
+                              Pracharat 1 Road,Wongsawang, Bangsue
                               <br />
-                              United Kingdom
+                              Bangkok 10800
                             </span>
                           </li>
                           <li>
                             <img src="../currency-exchange/images/i6.png" />
-                            <span>demo@gmail.com</span>
+                            <span>demo@kmutnb.co.th</span>
                           </li>
                           <li>
                             <img src="../currency-exchange/images/i7.png" />
-                            <span>+12586954775</span>
+                            <span>+66 2 555-2000</span>
                           </li>
                         </ul>
                       </div>
@@ -109,7 +101,7 @@ class Footer extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <p className="crp">© Copyrights 2019 design by html.design</p>
+                <p className="crp">© Copyrights 2019 design by Suradath.design</p>
               </div>
             </div>
           </div>
