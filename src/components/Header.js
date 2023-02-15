@@ -114,7 +114,7 @@ class Header extends React.Component {
                             </Link>
                           </li>
                           <li>
-                            <a className="nav-link" href="exchange.html">
+                            <a className="nav-link" href="/example">
                               Example
                             </a>
                           </li>

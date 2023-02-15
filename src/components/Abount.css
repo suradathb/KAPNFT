@@ -42,3 +42,6 @@ pre, code, kbd, samp, var {
 .token.atrule, .token.attr-value, .token.keyword {
     color: #07a;
 }
+.btn-success{
+    background-color: #28a745;
+}

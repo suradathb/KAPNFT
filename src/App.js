@@ -8,6 +8,7 @@ import ReadContract from "./components/ReadContract";
 import WriteContract from "./components/WriteContract";
 import Web3Service from "./components/web3.server";
 import Abount from "./components/Abount";
+import Example from "./components/Example";
 
 class App extends React.Component {
   async componentDidMount() {
@@ -48,6 +49,7 @@ class App extends React.Component {
           <Route path="/" element={<ReadContract />} />
           <Route path="/write" element={<WriteContract />} />
           <Route path="/erc20" element={<Abount/>}/>
+          <Route path="/example" element={<Example/>}/>
         </Routes>
         <Footer />
       </>
