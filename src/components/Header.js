@@ -52,27 +52,6 @@ class Header extends React.Component {
                     </li>
                   </ul>
                 </div>
-                {/* <div className="site_information">
-                  <ul>
-                    <li>
-                      <a href="mailto:exchang@gmail.com">
-                        <img src="../currency-exchange/images/mail_icon.png" alt="#" />
-                        kmutnb@gmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <a href="tel:exchang@gmail.com">
-                        <img src="../currency-exchange/images/phone_icon.png" alt="#" />
-                        +7123569847
-                      </a>
-                    </li>
-                    <li>
-                      <a className="join_bt" href="#">
-                        Join us
-                      </a>
-                    </li>
-                  </ul>
-                </div> */}
               </div>
             </div>
           </div>

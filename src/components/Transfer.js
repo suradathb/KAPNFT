@@ -15,7 +15,7 @@ class Transfer extends React.Component {
  async componentDidMount(){
    await Web3Service.loadWeb3();
    await Web3Service.loadBlockchainData();
-   console.log(Web3Service.state.kmutnbToken);
+  //  console.log(Web3Service.state.kmutnbToken);
     this.setState({
         account:Web3Service.state.account,
         kmutnbToken:Web3Service.state.kmutnbToken

@@ -1,7 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import KmutnbToken from "./abis/KmutnbToken.json";
-import Web3 from "web3";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ReadContract from "./components/ReadContract";
