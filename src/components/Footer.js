@@ -20,7 +20,7 @@ class Footer extends React.Component {
                     <div className="full">
                       <img
                         className="logofooter"
-                        src="../currency-exchange/images/kmutnb.jpg"
+                        src="../images/kmutnb.jpg"
                         alt="#"
                       />
                     </div>
@@ -35,7 +35,7 @@ class Footer extends React.Component {
                           <Link to="/">Smart Contract</Link>
                         </li>
                         <li>
-                          <Link to="/erc20">ERC20</Link>
+                          <Link to="/erc20">Document</Link>
                         </li>
                         <li>
                         <Link to="/example">
@@ -73,7 +73,7 @@ class Footer extends React.Component {
                         <h3>Contact us</h3>
                         <ul className="full">
                           <li>
-                            <img src="../currency-exchange/images/i5.png" />
+                            <img src="../images/i5.png" />
                             <span>
                               Pracharat 1 Road,Wongsawang, Bangsue
                               <br />
@@ -81,11 +81,11 @@ class Footer extends React.Component {
                             </span>
                           </li>
                           <li>
-                            <img src="../currency-exchange/images/i6.png" />
+                            <img src="../images/i6.png" />
                             <span>demo@kmutnb.co.th</span>
                           </li>
                           <li>
-                            <img src="../currency-exchange/images/i7.png" />
+                            <img src="../images/i7.png" />
                             <span>+66 2 555-2000</span>
                           </li>
                         </ul>
