@@ -38,7 +38,9 @@ class Footer extends React.Component {
                           <Link to="/erc20">ERC20</Link>
                         </li>
                         <li>
-                          <a href="exchange.html"> Example</a>
+                        <Link to="/example">
+                              Example
+                            </Link>
                         </li>
                       </ul>
                     </div>
