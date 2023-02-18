@@ -110,7 +110,7 @@ class Header extends React.Component {
                     />
                     <a className="search-btn">
                       <img
-                        src="../currency-exchange/images/search_icon.png"
+                        src="../images/search_icon.png"
                         alt="#"
                       />
                     </a>

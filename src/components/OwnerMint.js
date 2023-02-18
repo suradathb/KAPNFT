@@ -60,10 +60,11 @@ class OwnerMint extends React.Component {
                 <div className="row">
                   <div className="col-sm-12 card-col">
                     <p>
-                      <h4>โจทย์</h4> 1.กำหนดให้เขียนฟังชั่น Smart Contract โดยใช้ Smart Contract  เดิมที่มีอยู่ เพิ่มฟังชั่น ให้ผู้ออก Token เท่านั้นที่สามารถออก Token เพิ่มเข้ามายังระบบได้
+                      <h4>โจทย์</h4> 1.กำหนดให้เขียน Function Smart Contract โดยใช้ Smart Contract  เดิมที่มีอยู่ เพิ่ม Function ให้ผู้ออก Token เท่านั้นที่สามารถออก Token เพิ่มเข้ามายังระบบได้
                     </p>
-                    <p>CMD : truffle migrate --reset --network kmutnbTes</p>
+                    <p className="note">CMD : truffle migrate --reset --network kmutnbTes</p>
                     <p>2.หลังจากการ Deploy smart contract กำหนดให้เรียก Smart Contract ผ่าน Action ที่ได้เตรียมไว้ให้ ให้ผู้ออก Token  สามารถเพิ่ม Token  เข้าในระบบได้</p>
+                    <p className="note">Function ที่เตรียมไว้อยู่ที่ components/OwnerMint.js</p>
                     <input
                       type="number"
                       className="form-control"
