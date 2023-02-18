@@ -47,7 +47,7 @@ require("dotenv").config();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const providerTestnet = new HDWalletProvider({
   privateKeys: [
-    "e2024b93133398322d3e02b09108668571983a6b79e91f68b35a9e261c58f3a5",
+    "b0ff80f32ed48e88de30441f2974df9bc05705c54285d6236e31e187256952f7",
   ],
   providerOrUrl: "https://rpc-mumbai.maticvigil.com",
 });
