@@ -38,13 +38,8 @@ class Footer extends React.Component {
                           <Link to="/erc20">Document</Link>
                         </li>
                         <li>
-<<<<<<< HEAD
+
                           <Link to="/example">Example</Link>
-=======
-                        <Link to="/example">
-                              Example
-                            </Link>
->>>>>>> ab7a1d1735678362e34c73c95b9c1badac70334e
                         </li>
                       </ul>
                     </div>
