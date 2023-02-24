@@ -17,8 +17,8 @@ class WriteContract extends React.Component {
   render() {
     return (
       <>
-         {/* <!-- Start Banner --> */}
-         <div className="section inner_page_banner">
+        {/* <!-- Start Banner --> */}
+        <div className="section inner_page_banner">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
@@ -49,13 +49,13 @@ class WriteContract extends React.Component {
           </Link>
         </div>
         <div id="accordion">
-          <Approve/>
-          <Burn/>
-          <BurnFrom/>
-          <DecreaseAllowance/>
-          <IncreaseAllowance/>
-          <Transfer/>
-          <TransferFrom/>
+          <Approve />
+          <Burn />
+          <BurnFrom />
+          <DecreaseAllowance />
+          <IncreaseAllowance />
+          <Transfer />
+          <TransferFrom />
         </div>
       </>
     );

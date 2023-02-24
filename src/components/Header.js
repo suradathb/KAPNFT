@@ -97,7 +97,6 @@ class Header extends React.Component {
                               Example
                             </Link>
                           </li>
-                          
                         </ul>
                       </div>
                     </div>
@@ -109,10 +108,7 @@ class Header extends React.Component {
                       placeholder="Search"
                     />
                     <a className="search-btn">
-                      <img
-                        src="../images/search_icon.png"
-                        alt="#"
-                      />
+                      <img src="../images/search_icon.png" alt="#" />
                     </a>
                   </div>
                 </div>

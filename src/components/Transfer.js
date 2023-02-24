@@ -1,7 +1,6 @@
 import React from "react";
 import Web3Service from "./web3.server";
 
-
 class Transfer extends React.Component {
   constructor(props) {
     super(props);
@@ -12,13 +11,13 @@ class Transfer extends React.Component {
       amount: 0,
     };
   }
- async componentDidMount(){
-   await Web3Service.loadWeb3();
-   await Web3Service.loadBlockchainData();
-  //  console.log(Web3Service.state.kmutnbToken);
+  async componentDidMount() {
+    await Web3Service.loadWeb3();
+    await Web3Service.loadBlockchainData();
+    //  console.log(Web3Service.state.kmutnbToken);
     this.setState({
-        account:Web3Service.state.account,
-        kmutnbToken:Web3Service.state.kmutnbToken
+      account: Web3Service.state.account,
+      kmutnbToken: Web3Service.state.kmutnbToken,
     });
   }
   currencyFormat(num) {
@@ -27,13 +26,13 @@ class Transfer extends React.Component {
   createTransfer() {
     // console.log(this.state.address)
     this.state.kmutnbToken.methods
-      .transfer(this.state.address,this.state.amount)
+      .transfer(this.state.address, this.state.amount)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
         console.log("BurnSusess", this.state.account, ":", this.state.amount);
         window.location.reload();
       });
-  };
+  }
   render() {
     return (
       <>
@@ -46,7 +45,11 @@ class Transfer extends React.Component {
         >
           <div className="card">
             <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseSix">
+              <a
+                className="card-link"
+                data-toggle="collapse"
+                href="#collapseSix"
+              >
                 6.Transfer(to,amount)
               </a>
             </div>
@@ -65,7 +68,7 @@ class Transfer extends React.Component {
                       name="address"
                       value={this.state.address}
                       onChange={(event) => {
-                        this.setState({address : event.target.value});
+                        this.setState({ address: event.target.value });
                       }}
                     />
                   </div>
@@ -76,14 +79,26 @@ class Transfer extends React.Component {
                       placeholder="amount (uint256)"
                       name="amount"
                       value={this.state.amount}
-                      onChange = {(event) => {
-                        this.setState({amount : event.target.value});
+                      onChange={(event) => {
+                        this.setState({ amount: event.target.value });
                       }}
                     />
                   </div>
                   <div className="col-sm-12 card-col">
-                    <input type="submit" value="Transfer" className="btn btn-success"/>
-                    <p><h4>Transfer(address indexed from, address indexed to, uint tokens)</h4>เป็น event ที่ถูกเรียก เมื่อโอนเกิดขึ้น มาตรฐานบังคับให้ใส่ emit Transfer() ในฟังชั่น transfer() และ transferFrom() ด้วย</p>
+                    <input
+                      type="submit"
+                      value="Transfer"
+                      className="btn btn-success"
+                    />
+                    <p>
+                      <h4>
+                        Transfer(address indexed from, address indexed to, uint
+                        tokens)
+                      </h4>
+                      เป็น event ที่ถูกเรียก เมื่อโอนเกิดขึ้น
+                      มาตรฐานบังคับให้ใส่ emit Transfer() ในฟังชั่น transfer()
+                      และ transferFrom() ด้วย
+                    </p>
                   </div>
                 </div>
               </div>

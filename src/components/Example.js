@@ -35,8 +35,8 @@ class Example extends React.Component {
                 </div>
               </div>
             </div>
-            <OwnerMint/>
-            <AddOwner/>
+            <OwnerMint />
+            <AddOwner />
           </div>
         </div>
       </>

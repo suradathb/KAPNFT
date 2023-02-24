@@ -38,7 +38,6 @@ class Footer extends React.Component {
                           <Link to="/erc20">Document</Link>
                         </li>
                         <li>
-
                           <Link to="/example">Example</Link>
                         </li>
                       </ul>

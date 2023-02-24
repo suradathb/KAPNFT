@@ -33,10 +33,10 @@ class Abount extends React.Component {
                 </div>
               </div>
             </div>
-            <SetChome/>
-            <SetMetamask/>
-            <SetStockData/>
-            <SetRemix/>
+            <SetChome />
+            <SetMetamask />
+            <SetStockData />
+            <SetRemix />
           </div>
         </div>
         {/* <!-- end section --> */}

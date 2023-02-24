@@ -24,7 +24,7 @@ class BurnFrom extends React.Component {
   createBurnFrom() {
     // console.log(this.state.address)
     this.state.kmutnbToken.methods
-      .burnFrom(this.state.address,this.state.amount)
+      .burnFrom(this.state.address, this.state.amount)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
         console.log("BurnSusess", this.state.account, ":", this.state.amount);
@@ -43,7 +43,11 @@ class BurnFrom extends React.Component {
         >
           <div className="card">
             <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseTree">
+              <a
+                className="card-link"
+                data-toggle="collapse"
+                href="#collapseTree"
+              >
                 3.BurnFrom(address,uint256)
               </a>
             </div>
@@ -84,7 +88,11 @@ class BurnFrom extends React.Component {
                       value="BurnFrom"
                       className="btn btn-success"
                     />
-                    <p><h4>BurnFrom(address,uint256)</h4> address ของผู้อนุมัติ Approve ให้วงเงินจากเช็คที่รับ จะสามารถ BurnFrom ได้จากฟังชั่นนี้</p>
+                    <p>
+                      <h4>BurnFrom(address,uint256)</h4> address ของผู้อนุมัติ
+                      Approve ให้วงเงินจากเช็คที่รับ จะสามารถ BurnFrom
+                      ได้จากฟังชั่นนี้
+                    </p>
                   </div>
                 </div>
               </div>

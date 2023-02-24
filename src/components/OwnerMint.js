@@ -21,7 +21,7 @@ class OwnerMint extends React.Component {
     });
   }
   Mint() {
-    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน")
+    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน");
     // console.log(this.state.address)
     // this.state.kmutnbToken.methods
     //   .mint(this.state.account,this.state.amount)
@@ -60,11 +60,22 @@ class OwnerMint extends React.Component {
                 <div className="row">
                   <div className="col-sm-12 card-col">
                     <p>
-                      <h4>โจทย์</h4> 1.กำหนดให้เขียน Function Smart Contract โดยใช้ Smart Contract  เดิมที่มีอยู่ เพิ่ม Function ให้ผู้ออก Token เท่านั้นที่สามารถออก Token เพิ่มเข้ามายังระบบได้
+                      <h4>โจทย์</h4> 1.กำหนดให้เขียน Function Smart Contract
+                      โดยใช้ Smart Contract เดิมที่มีอยู่ เพิ่ม Function
+                      ให้ผู้ออก Token เท่านั้นที่สามารถออก Token
+                      เพิ่มเข้ามายังระบบได้
                     </p>
-                    <p className="note">CMD : truffle migrate --reset --network kmutnbTes</p>
-                    <p>2.หลังจากการ Deploy smart contract กำหนดให้เรียก Smart Contract ผ่าน Action ที่ได้เตรียมไว้ให้ ให้ผู้ออก Token  สามารถเพิ่ม Token  เข้าในระบบได้</p>
-                    <p className="note">Function ที่เตรียมไว้อยู่ที่ components/OwnerMint.js</p>
+                    <p className="note">
+                      CMD : truffle migrate --reset --network kmutnbTes
+                    </p>
+                    <p>
+                      2.หลังจากการ Deploy smart contract กำหนดให้เรียก Smart
+                      Contract ผ่าน Action ที่ได้เตรียมไว้ให้ ให้ผู้ออก Token
+                      สามารถเพิ่ม Token เข้าในระบบได้
+                    </p>
+                    <p className="note">
+                      Function ที่เตรียมไว้อยู่ที่ components/OwnerMint.js
+                    </p>
                     <input
                       type="number"
                       className="form-control"
@@ -83,7 +94,9 @@ class OwnerMint extends React.Component {
                       className="btn btn-success"
                     />
                     <p className="note">
-                      <h4>หมายเหตุ : </h4> การเช็คยอดจากระบบสามารถเช็คได้จาก Smart Contract ฟังชั่น TotalSupply() ที่ Menu : Smart Contract
+                      <h4>หมายเหตุ : </h4> การเช็คยอดจากระบบสามารถเช็คได้จาก
+                      Smart Contract ฟังชั่น TotalSupply() ที่ Menu : Smart
+                      Contract
                     </p>
                   </div>
                 </div>

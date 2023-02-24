@@ -24,10 +24,15 @@ class DecreaseAllowance extends React.Component {
   createDecreaseAllowance() {
     // console.log(this.state.address)
     this.state.kmutnbToken.methods
-      .decreaseAllowance(this.state.spender,this.state.subtracted)
+      .decreaseAllowance(this.state.spender, this.state.subtracted)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
-        console.log("BurnSusess", this.state.account, ":", this.state.subtracted);
+        console.log(
+          "BurnSusess",
+          this.state.account,
+          ":",
+          this.state.subtracted
+        );
         window.location.reload();
       });
   }
@@ -43,7 +48,11 @@ class DecreaseAllowance extends React.Component {
         >
           <div className="card">
             <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseFour">
+              <a
+                className="card-link"
+                data-toggle="collapse"
+                href="#collapseFour"
+              >
                 4.DecreaseAllowance(spender,subtractedValue)
               </a>
             </div>
@@ -79,7 +88,7 @@ class DecreaseAllowance extends React.Component {
                     />
                   </div>
                   <div className="col-sm-12 card-col">
-                  <input
+                    <input
                       type="submit"
                       value="DecreaseAllowance"
                       className="btn btn-success"

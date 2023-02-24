@@ -18,19 +18,18 @@ class Allowance extends React.Component {
       return;
     }
     try {
-      const allowance = await kmutnbToken.methods.allowance(this.state.owner, this.state.spender).call();
+      const allowance = await kmutnbToken.methods
+        .allowance(this.state.owner, this.state.spender)
+        .call();
       this.setState({ allowance });
     } catch (err) {
       console.error(err);
     }
-  }
+  };
   render() {
     return (
       <>
-        <form
-          role="form"
-          onSubmit={this.handleSubmit}
-        >
+        <form role="form" onSubmit={this.handleSubmit}>
           <div className="card">
             <div className="card-header">
               <a

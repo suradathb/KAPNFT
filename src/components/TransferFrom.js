@@ -51,7 +51,11 @@ class TransferFrom extends React.Component {
         >
           <div className="card">
             <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseSeven">
+              <a
+                className="card-link"
+                data-toggle="collapse"
+                href="#collapseSeven"
+              >
                 7.TransferFrom(from,to,amount)
               </a>
             </div>

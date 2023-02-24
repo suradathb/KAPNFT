@@ -28,7 +28,7 @@ class Web3Service {
   }
 
   listenForAccountChanges() {
-    window.ethereum.on('accountsChanged', (accounts) => {
+    window.ethereum.on("accountsChanged", (accounts) => {
       this.state.account = accounts[0];
       this.loadBlockchainData();
     });
@@ -46,9 +46,7 @@ class Web3Service {
       this.state.kmutnbToken = kmutnbToken;
     }
   }
-
 }
-
 
 const web3Service = new Web3Service();
 export default web3Service;

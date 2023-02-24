@@ -129,7 +129,7 @@ class ReadContract extends React.Component {
           </div>
         </form>
         <div id="accordion">
-          <Allowance/>
+          <Allowance />
         </div>
       </>
     );

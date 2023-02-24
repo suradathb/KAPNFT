@@ -15,15 +15,19 @@ class App extends React.Component {
     const balanceOf = await Web3Service.state.kmutnbToken.methods
       .balanceOf(Web3Service.state.account)
       .call({ from: Web3Service.state.account });
-    const totalSupply = await Web3Service.state.kmutnbToken.methods.totalSupply().call({from:Web3Service.state.account});
-    const name = await Web3Service.state.kmutnbToken.methods.name().call({from:Web3Service.state.account});
-    
+    const totalSupply = await Web3Service.state.kmutnbToken.methods
+      .totalSupply()
+      .call({ from: Web3Service.state.account });
+    const name = await Web3Service.state.kmutnbToken.methods
+      .name()
+      .call({ from: Web3Service.state.account });
+
     this.setState({
       account: Web3Service.state.account,
       kmutnbToken: Web3Service.state.kmutnbToken,
       balanceOf: balanceOf,
-      totalSupply:totalSupply,
-      SName:name
+      totalSupply: totalSupply,
+      SName: name,
     });
   }
   constructor(props) {
@@ -46,8 +50,8 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<ReadContract />} />
           <Route path="/write" element={<WriteContract />} />
-          <Route path="/erc20" element={<Abount/>}/>
-          <Route path="/example" element={<Example/>}/>
+          <Route path="/erc20" element={<Abount />} />
+          <Route path="/example" element={<Example />} />
         </Routes>
         <Footer />
       </>

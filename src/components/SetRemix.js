@@ -63,34 +63,31 @@ function SetRemix(props) {
                   </div>
                   <code lang="javascript">
                     <span className="token licence">
-                    &nbsp;
-                      // SPDX-License-Identifier: GPL-3.0
+                      &nbsp; // SPDX-License-Identifier: GPL-3.0
                     </span>
                     <p />
                     <span className="token keyword">
-                    &nbsp;
+                      &nbsp;
                       {"pragma solidity "}
                     </span>
                     <span className="token version">
-                    &nbsp;
+                      &nbsp;
                       {">=0.7.0 <0.9.0;"}
                     </span>
                     <p />
                     <span className="token import">
-                    &nbsp;
-                      {
-                        'import'
-                      }
+                      &nbsp;
+                      {"import"}
                     </span>
                     <span className="token ERC20">
-                    &nbsp;
+                      &nbsp;
                       {
                         '"@openzeppelin/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol";'
                       }
                     </span>
                     <p />
                     <span className="token contract">
-                    &nbsp;&nbsp;
+                      &nbsp;&nbsp;
                       {"contract KmutnbToken is ERC20PresetFixedSupply {"}
                     </span>
                     <p />
@@ -135,7 +132,7 @@ function SetRemix(props) {
                     </span>
                     <p />
                     <span className="token operator">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       {")"}
                     </span>
                     <p />
@@ -151,19 +148,19 @@ function SetRemix(props) {
                     </span>
                     <p />
                     <span className="token string">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       {"symbol,"}
                     </span>
                     <p />
                     <span className="token string">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       {"price,"}
                     </span>
                     <p />
                     <span className="token string">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       {"owner"}
                     </span>
@@ -177,28 +174,25 @@ function SetRemix(props) {
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"{}"}
                     </span>
                   </code>
-                  <p/>
+                  <p />
                   <span className="token contract">
                     &nbsp;&nbsp;
-                      {"}"}
-                    </span>
+                    {"}"}
+                  </span>
                   <p />
-                  
                 </div>
                 <p>
                   <h4>Deploy 3:</h4>
                 </p>
                 <p>
-                  NAME : {" "} ชื่อเต็มของ Token เช่น KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK.
+                  NAME : ชื่อเต็มของ Token เช่น KING MONGKUT'S UNIVERSITY OF
+                  TECHNOLOGY NORTH BANGKOK.
                 </p>
+                <p>SYMBOL : ชื่อย่อ Token เช่น KMUTNB</p>
+                <p>PRICE : จำนวน Token ที่ออก เช่น 30000000</p>
                 <p>
-                  SYMBOL : {" "} ชื่อย่อ Token เช่น KMUTNB
-                </p>
-                <p>
-                  PRICE : {" "} จำนวน Token ที่ออก  เช่น 30000000
-                </p>
-                <p>
-                  OWNER : {" "} address ของผู้ดูแล เช่น 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+                  OWNER : address ของผู้ดูแล เช่น
+                  0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
                 </p>
 
                 <img src="images/deploy.png" alt="#" />

@@ -5,10 +5,10 @@ class AddOwner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        account:"",
-        kmutnbToken:null,
-        addressOwner:"",
-    }
+      account: "",
+      kmutnbToken: null,
+      addressOwner: "",
+    };
   }
 
   async componentWillMount() {
@@ -16,13 +16,13 @@ class AddOwner extends React.Component {
     await web3Service.loadBlockchainData();
     // console.log(web3Service.state.kmutnbToken)
     this.setState({
-        account: web3Service.state.account,
-        kmutnbToken: web3Service.state.kmutnbToken
+      account: web3Service.state.account,
+      kmutnbToken: web3Service.state.kmutnbToken,
     });
   }
-  
+
   AddMint() {
-    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน")
+    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน");
     // console.log(this.state.address)
     // this.state.kmutnbToken.methods
     //   .addMinter(this.state.addressOwner)
@@ -61,16 +61,20 @@ class AddOwner extends React.Component {
               <div class="card-body">
                 <div className="row">
                   <div className="col-sm-12 card-col">
-                  <button onClick={this.handleClick}>Count Down</button>
-                <p>{this.state.count}</p>
+                    <button onClick={this.handleClick}>Count Down</button>
+                    <p>{this.state.count}</p>
                     <p>
                       <h4>โจทย์</h4> 1.กำหนดให้เขียนฟังชั่น Smart Contract
-                      โดยใช้ Smart Contract เดิมที่มีอยู่ เพิ่มฟังชั่น ให้สามารถเพิ่มเจ้าหน้าที่ที่สามารถเพิ่มเหรียญเข้าในระบบได้
+                      โดยใช้ Smart Contract เดิมที่มีอยู่ เพิ่มฟังชั่น
+                      ให้สามารถเพิ่มเจ้าหน้าที่ที่สามารถเพิ่มเหรียญเข้าในระบบได้
                     </p>
                     <p>CMD : truffle migrate --reset --network kmutnbTes</p>
                     <p>
                       2.หลังจากการ Deploy smart contract กำหนดให้เรียก Smart
-                      Contract ผ่าน Action ที่ได้เตรียมไว้ให้ โดยใช้ address  ของเจ้าหน้าที่ที่เพิ่มเข้าไปในระบบใหม่ เพิ่มวงเงินเข้าไปในระบบ 500 Token ผ่าน ฟังชั่น Mint(uint256)
+                      Contract ผ่าน Action ที่ได้เตรียมไว้ให้ โดยใช้ address
+                      ของเจ้าหน้าที่ที่เพิ่มเข้าไปในระบบใหม่
+                      เพิ่มวงเงินเข้าไปในระบบ 500 Token ผ่าน ฟังชั่น
+                      Mint(uint256)
                     </p>
                     <input
                       type="text"

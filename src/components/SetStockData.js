@@ -23,7 +23,7 @@ function SetStockData(props) {
                 </p>
                 <p>
                   1.ให้บริการ Token สำหรับทดสอบบน Test Net ใช้เป็นค้า Gas
-                  หรือค่าบริการ transction : {" "} 
+                  หรือค่าบริการ transction :{" "}
                   <a
                     className="btn btn-success"
                     href="https://faucet.polygon.technology/"
@@ -36,7 +36,7 @@ function SetStockData(props) {
                 </p>
                 <p>
                   2.Polygon Scan ให้บริการเก็บธุรกรรมที่ดำเนินการ และสัญญาที่ถูก
-                  Deploy ขึ้นไปยัง Chain : {" "}
+                  Deploy ขึ้นไปยัง Chain :{" "}
                   <a
                     className="btn btn-success"
                     href="https://mumbai.polygonscan.com/"

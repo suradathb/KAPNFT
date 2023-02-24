@@ -43,7 +43,11 @@ class Approve extends React.Component {
         >
           <div className="card">
             <div className="card-header">
-              <a className="card-link" data-toggle="collapse" href="#collapseOne">
+              <a
+                className="card-link"
+                data-toggle="collapse"
+                href="#collapseOne"
+              >
                 1.Approve(address,uint256)
               </a>
             </div>
@@ -84,7 +88,13 @@ class Approve extends React.Component {
                       value="Approve"
                       className="btn btn-success"
                     />
-                    <p><h4>approve(address spender, uint tokens)</h4> ใช้กันเงินให้อีก address เหมือนกับทำแคชเชียร์เช็คโอนเงินให้ ได้ transaction log กลับมา เพราะเป็นการบันทึกข้อมูลลง transaction เหมือนกับ transfer()</p>
+                    <p>
+                      <h4>approve(address spender, uint tokens)</h4>{" "}
+                      ใช้กันเงินให้อีก address
+                      เหมือนกับทำแคชเชียร์เช็คโอนเงินให้ ได้ transaction log
+                      กลับมา เพราะเป็นการบันทึกข้อมูลลง transaction เหมือนกับ
+                      transfer()
+                    </p>
                   </div>
                 </div>
               </div>
