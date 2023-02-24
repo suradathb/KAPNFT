@@ -14,7 +14,7 @@ class OwnerMint extends React.Component {
   async componentDidMount() {
     await Web3Service.loadWeb3();
     await Web3Service.loadBlockchainData();
-    // console.log(Web3Service.state.kmutnbToken);
+    console.log(Web3Service.state.kmutnbToken);
     this.setState({
       account: Web3Service.state.account,
       kmutnbToken: Web3Service.state.kmutnbToken,
@@ -24,7 +24,7 @@ class OwnerMint extends React.Component {
     alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน")
     // console.log(this.state.address)
     // this.state.kmutnbToken.methods
-    //   .mint(this.state.amount)
+    //   .mint(this.state.account,this.state.amount)
     //   .send({ from: this.state.account })
     //   .once("receipt", (receipt) => {
     //     console.log("BurnSusess", this.state.account, ":", this.state.amount);
@@ -46,13 +46,13 @@ class OwnerMint extends React.Component {
               <a
                 className="card-link"
                 data-toggle="collapse"
-                href="#collapsefive"
+                href="#collapseone"
               >
                 แบบฝึกหัด Smart Contract
               </a>
             </div>
             <div
-              id="collapsefive"
+              id="collapseone"
               className="collapse hide"
               data-parent="#accordion"
             >

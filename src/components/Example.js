@@ -1,6 +1,7 @@
 import React from "react";
 import OwnerMint from "./OwnerMint";
 import "./Example.css";
+import AddOwner from "./AddOwner";
 
 class Example extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Example extends React.Component {
               </div>
             </div>
             <OwnerMint/>
+            <AddOwner/>
           </div>
         </div>
       </>

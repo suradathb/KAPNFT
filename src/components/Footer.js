@@ -38,7 +38,7 @@ class Footer extends React.Component {
                           <Link to="/erc20">ERC20</Link>
                         </li>
                         <li>
-                          <a href="exchange.html"> Example</a>
+                          <Link to="/example">Example</Link>
                         </li>
                       </ul>
                     </div>
@@ -101,7 +101,9 @@ class Footer extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <p className="crp">© Copyrights 2019 design by Suradath.design</p>
+                <p className="crp">
+                  © Copyrights 2019 design by Suradath.design
+                </p>
               </div>
             </div>
           </div>
