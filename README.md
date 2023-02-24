@@ -41,6 +41,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
+<<<<<<< HEAD
 
 ### EX1 
 ## EX2 Allow the owner to add minters
@@ -80,3 +81,8 @@ contract KmutnbToken is ERC20PresetFixedSupply, AccessControl {
         grantRole(MINTER_ROLE, minter);
     }
 }
+=======
+### `Start issue ` fails
+
+--openssl-legacy-provider
+>>>>>>> ab7a1d1735678362e34c73c95b9c1badac70334e

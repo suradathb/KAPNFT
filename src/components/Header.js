@@ -38,7 +38,7 @@ class Header extends React.Component {
                   <Link className="navbar-brand" to="/">
                     <img
                       className="logo"
-                      src="../currency-exchange/images/kmutnb.jpg"
+                      src="../images/kmutnb.jpg"
                       alt="image"
                     />
                   </Link>
@@ -89,7 +89,7 @@ class Header extends React.Component {
                           </li>
                           <li>
                             <Link className="nav-link" to="/erc20">
-                              ERC20
+                              Document
                             </Link>
                           </li>
                           <li>
@@ -110,7 +110,7 @@ class Header extends React.Component {
                     />
                     <a className="search-btn">
                       <img
-                        src="../currency-exchange/images/search_icon.png"
+                        src="../images/search_icon.png"
                         alt="#"
                       />
                     </a>

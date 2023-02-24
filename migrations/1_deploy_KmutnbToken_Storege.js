@@ -1,6 +1,6 @@
 const kmutnbToken = artifacts.require("KmutnbToken");
 
 module.exports = function(deployer) {
-  account = "0xE935a4C890a1D1B8b1F9aFC83eA96b65792e2736";
+  account = "0x9E2F602cAFBd872202bd4099246c6725939Fe8c7";
   deployer.deploy(kmutnbToken, account);
 };
