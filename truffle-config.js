@@ -52,6 +52,13 @@ const providerTestnet = new HDWalletProvider({
   providerOrUrl: "https://rpc-mumbai.maticvigil.com",
 });
 
+const KapChainTestnet = new HDWalletProvider({
+  privateKeys: [
+    "968ba4a0e1d01c637d9d8dd7958373bc3562d2215813f607779b07fbcddd8dd2",
+  ],
+  providerOrUrl: "https://rpc-testnet.bitkubchain.io",
+});
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -77,6 +84,12 @@ module.exports = {
       port: 80001,
       skipDryRun: true,
     },
+    kapTestnet : {
+      provider: () => KapChainTestnet,
+      network_id: "25925",
+      port: 25925,
+      skipDryRun: true,
+    }
     // development: {
     //  host: "127.0.0.1",     // Localhost (default: none)
     //  port: 8545,            // Standard Ethereum port (default: none)

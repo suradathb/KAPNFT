@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Footer.css";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Footer extends React.Component {
                     <div className="full">
                       <img
                         className="logofooter"
-                        src="../images/kmutnb.jpg"
+                        src="../images/demo.png"
                         alt="#"
                       />
                     </div>

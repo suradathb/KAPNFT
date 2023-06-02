@@ -1,5 +1,6 @@
 import Web3 from "web3";
 import KmutnbToken from "../abis/KmutnbToken.json";
+import kap721 from "../abis/Kap721.json";
 
 class Web3Service {
   constructor() {
@@ -7,6 +8,7 @@ class Web3Service {
     this.state = {
       account: "",
       kmutnbToken: null,
+      erc721Token:null,
     };
   }
 
@@ -44,6 +46,18 @@ class Web3Service {
       const address = networkData.address;
       const kmutnbToken = new this.web3.eth.Contract(abi, address);
       this.state.kmutnbToken = kmutnbToken;
+    }
+  }
+  async loadERC721() {
+    if (this.web3) {
+      const accounts = await this.web3.eth.getAccounts();
+      this.state.account = accounts[0];
+      const network721Id = await this.web3.eth.net.getId();
+      const networkData = kap721.networks[network721Id];
+      const erc721abi = kap721.abi;
+      const addresserc721 = networkData.address;
+      const kap721Load = new this.web3.eth.Contract(erc721abi, addresserc721);
+      this.state.erc721Token = kap721Load;
     }
   }
 }
