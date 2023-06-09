@@ -33,7 +33,10 @@ class Footer extends React.Component {
                     <div className="full">
                       <ul className="menu_footer">
                         <li>
-                          <Link to="/">Smart Contract</Link>
+                          <Link to="/">ERC20</Link>
+                        </li>
+                        <li>
+                          <Link to="/721">ERC721</Link>
                         </li>
                         <li>
                           <Link to="/erc20">Document</Link>
@@ -74,14 +77,14 @@ class Footer extends React.Component {
                           <li>
                             <img src="../images/i5.png" />
                             <span>
-                              Pracharat 1 Road,Wongsawang, Bangsue
+                              302/724 คอนโดนบ้านสวนซื่อตรง อาคาร 5 ชั้น 8 แขวงคลองเจ้าคุณสิงห์ เขตวังทองหลาง
                               <br />
-                              Bangkok 10800
+                              กรุงเทพมหานคร 10310
                             </span>
                           </li>
                           <li>
                             <img src="../images/i6.png" />
-                            <span>demo@kmutnb.co.th</span>
+                            <span>info@bangnikrai.com</span>
                           </li>
                           <li>
                             <img src="../images/i7.png" />
