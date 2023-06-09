@@ -3,32 +3,11 @@ import { Link } from "react-router-dom";
 import AwardItem from "./AwardItem";
 import Web3Service from "./web3.server";
 
-class WriteContract721 extends React.Component {
+class ReadContract721 extends React.Component {
+  async componentDidMount() {}
   constructor(props) {
     super(props);
-    this.state = {
-      account: "",
-      erc721Token: null,
-      SSymbols: "",
-      SName: "",
-    };
-  }
-  async componentDidMount() {
-    await Web3Service.loadWeb3();
-    await Web3Service.loadERC721();
-    // console.log(Web3Service.state.kmutnbToken);
-    const symbols = await Web3Service.state.erc721Token.methods
-      .symbol()
-      .call({ from: Web3Service.state.account });
-    const names = await Web3Service.state.erc721Token.methods
-      .name()
-      .call({ from: Web3Service.state.account });
-    this.setState({
-      account: Web3Service.state.account,
-      erc721Token: Web3Service.state.erc721Token,
-      SSymbols: symbols,
-      SName: names,
-    });
+    this.state = {};
   }
   render() {
     return (
@@ -38,18 +17,19 @@ class WriteContract721 extends React.Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="banner_title">
-                  <h3>NFT Write Contract</h3>
+                  <h3>NFT Read Contract</h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* <!-- End Banner --> */}
+
         <div className="row">
           <div className="full paddding_left_15">
             <div className="heading_main text_align_left">
               <h2>
-                <span className="theme_color">NFT</span> ERC 721 {this.state.SName} : 
-                {this.state.SSymbols}
+                <span className="theme_color">NFT</span> ERC 721
               </h2>
             </div>
           </div>
@@ -70,4 +50,4 @@ class WriteContract721 extends React.Component {
   }
 }
 
-export default WriteContract721;
+export default ReadContract721;

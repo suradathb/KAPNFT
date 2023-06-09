@@ -19,14 +19,14 @@ class AwardItem extends React.Component {
     await Web3Service.loadWeb3();
     await Web3Service.loadERC721();
     const getTokenURI = await Web3Service.state.erc721Token.methods.tokenURI(0).call({ from: Web3Service.state.account });
-    //  console.log(Web3Service.state.kmutnbToken);
+    //  console.log(getTokenURI);
     this.setState({
       account: Web3Service.state.account,
       erc721Token: Web3Service.state.erc721Token,
       getTokenURI:getTokenURI,
     });
 
-    this.getDataSorce();
+    this.getDataSorce(getTokenURI);
   }
   currencyFormat(num) {
     return Intl.NumberFormat().format(num);
@@ -43,12 +43,13 @@ class AwardItem extends React.Component {
         window.location.reload();
       });
   }
-  getDataSorce(){
-    var splitData = this.state.getTokenURI.split(",");
+  getDataSorce(dataset){
+    var splitData = dataset.split(",");
     this.setState({
       id_card:splitData[0],
       id_name:splitData[1],
       id_Cord:splitData[2],
+      address:this.state.account,
     })
   }
   render() {
