@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import Web3Service from "./web3.server";
 
 class ReadContract721 extends React.Component {
@@ -72,18 +73,37 @@ class ReadContract721 extends React.Component {
     return (
       <>
         {/* <!-- Start Banner --> */}
+=======
+import AwardItem from "./AwardItem";
+import Web3Service from "./web3.server";
+
+class ReadContract721 extends React.Component {
+  async componentDidMount() {}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <>
+>>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
         <div className="section inner_page_banner">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
                 <div className="banner_title">
+<<<<<<< HEAD
                   <h3>KMUTNB ICO Read Contract</h3>
+=======
+                  <h3>NFT Read Contract</h3>
+>>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
                 </div>
               </div>
             </div>
           </div>
         </div>
         {/* <!-- End Banner --> */}
+<<<<<<< HEAD
         <form className="col-md-12">
           <div className="row">
             <div className="full paddding_left_15">
@@ -167,6 +187,29 @@ class ReadContract721 extends React.Component {
           </div>
         </form>
         <div id="accordion">{/* <AwardItem /> */}</div>
+=======
+
+        <div className="row">
+          <div className="full paddding_left_15">
+            <div className="heading_main text_align_left">
+              <h2>
+                <span className="theme_color">NFT</span> ERC 721
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div className="col col-link">
+          <Link className="link" to="/read721">
+            Read Contract
+          </Link>
+          <Link className="link" to="/721">
+            write Contract
+          </Link>
+        </div>
+        <div id="accordion">
+          <AwardItem />
+        </div>
+>>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
       </>
     );
   }
