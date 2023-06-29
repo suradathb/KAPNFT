@@ -1,5 +1,6 @@
 import React from "react";
 import Web3Service from "./web3.server";
+import web3Service from "./web3.server";
 
 class AwardItem extends React.Component {
   constructor(props) {
@@ -9,48 +10,37 @@ class AwardItem extends React.Component {
       erc721Token: null,
       address: "",
       tokenURI: "",
-      id_card : "",
-      id_name : "",
-      id_Cord:"",
-      getTokenURI:""
+      id_card: "",
+      id_name: "",
+      id_Cord: "",
+      getTokenURI: "",
+      getData: [],
+      counstData: 0,
     };
   }
   async componentDidMount() {
     await Web3Service.loadWeb3();
     await Web3Service.loadERC721();
-    const getTokenURI = await Web3Service.state.erc721Token.methods.tokenURI(0).call({ from: Web3Service.state.account });
-    //  console.log(Web3Service.state.kmutnbToken);
     this.setState({
       account: Web3Service.state.account,
       erc721Token: Web3Service.state.erc721Token,
-      getTokenURI:getTokenURI,
     });
-
-    this.getDataSorce();
   }
   currencyFormat(num) {
     return Intl.NumberFormat().format(num);
   }
   createMintECert() {
-    var TokenURI = this.state.id_card + "," + this.state.id_name + "," + this.state.id_Cord;
-    // console.log(this.state.address)
-    // console.log(arrsplit)
+    var response =
+      this.state.id_card + "," + this.state.id_name + "," + this.state.id_Cord;
     this.state.erc721Token.methods
-      .awardItem(this.state.address, TokenURI)
+      .NFTEservice(this.state.address, response)
       .send({ from: this.state.account })
       .once("receipt", (receipt) => {
-        console.log("Mint Success", this.state.account, ":", TokenURI);
+        console.log("Mint Success", this.state.account, ":", response);
         window.location.reload();
       });
   }
-  getDataSorce(){
-    var splitData = this.state.getTokenURI.split(",");
-    this.setState({
-      id_card:splitData[0],
-      id_name:splitData[1],
-      id_Cord:splitData[2],
-    })
-  }
+  
   render() {
     return (
       <>
@@ -133,10 +123,9 @@ class AwardItem extends React.Component {
                       className="btn btn-success"
                     />
                     <p>
-                      <h4>
-                        Mint(address player, String tokenURI)
-                      </h4>
-                      เป็น event ที่ถูกเรียก เมื่อต้องการสร้าง NFT และให้กับ Addres  ของผู้ใช้งานที่ต้องการ E Certificate
+                      <h4>Mint(address player, String tokenURI)</h4>
+                      เป็น event ที่ถูกเรียก เมื่อต้องการสร้าง NFT และให้กับ
+                      Addres ของผู้ใช้งานที่ต้องการ E Certificate
                     </p>
                   </div>
                 </div>

@@ -8,6 +8,9 @@ import Web3Service from "./components/web3.server";
 import Abount from "./components/Abount";
 import Example from "./components/Example";
 import WriteContract721 from "./components/WriteContract721";
+import ReadContract721 from "./components/ReadContract721";
+import BlockchainSimulator from "./components/BlockchainSimulator";
+import Hash from "./components/Hash";
 
 class App extends React.Component {
   async componentDidMount() {
@@ -52,10 +55,13 @@ class App extends React.Component {
         <Header />
         <Routes>
           <Route path="/" element={<ReadContract />} />
-          <Route path="/721" element={<WriteContract721 />} />
+          <Route path="/721" element={<ReadContract721 />} />
+          <Route path="/write721" element={<WriteContract721/>}/>
           <Route path="/write" element={<WriteContract />} />
           <Route path="/erc20" element={<Abount />} />
           <Route path="/example" element={<Example />} />
+          <Route path="/semorator" element={<BlockchainSimulator/>}/>
+          <Route path="/hash" element={<Hash/>}/>
         </Routes>
         <Footer />
       </>

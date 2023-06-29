@@ -55,10 +55,10 @@ class WriteContract721 extends React.Component {
           </div>
         </div>
         <div className="col col-link">
-          <Link className="link" to="/">
+          <Link className="link" to="/721">
             Read Contract
           </Link>
-          <Link className="link" to="/721">
+          <Link className="link" to="/write721">
             write Contract
           </Link>
         </div>

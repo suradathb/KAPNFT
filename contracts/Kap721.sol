@@ -9,9 +9,16 @@ contract Kap721 is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+    struct NFT {
+        uint256 tokenId;
+        string tokenURI;
+    }
+
+    NFT[] public nfts;
+
     constructor() ERC721("Electronically Manage Certificates", "EMC") {}
 
-    function awardItem(
+    function NFTEservice(
         address player,
         string memory tokenURI
     ) public returns (uint256) {
@@ -20,6 +27,18 @@ contract Kap721 is ERC721URIStorage {
         _setTokenURI(newItemId, tokenURI);
 
         _tokenIds.increment();
+
+        NFT memory newNFT = NFT(newItemId, tokenURI);
+        nfts.push(newNFT);
+
         return newItemId;
+    }
+
+    function countNFTs() public view returns (uint256) {
+        return nfts.length;
+    }
+
+    function getAllNFTs() public view returns (NFT[] memory) {
+        return nfts;
     }
 }

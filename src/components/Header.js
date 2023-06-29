@@ -102,6 +102,11 @@ class Header extends React.Component {
                               Example
                             </Link>
                           </li>
+                          <li>
+                            <Link className="nav-link" to="/semorator">
+                              Simulator
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                     </div>
