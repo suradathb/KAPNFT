@@ -1,6 +1,5 @@
 import React from "react";
 import Web3Service from "./web3.server";
-import web3Service from "./web3.server";
 
 class AwardItem extends React.Component {
   constructor(props) {
@@ -21,20 +20,13 @@ class AwardItem extends React.Component {
   async componentDidMount() {
     await Web3Service.loadWeb3();
     await Web3Service.loadERC721();
-<<<<<<< HEAD
-=======
     const getTokenURI = await Web3Service.state.erc721Token.methods.tokenURI(0).call({ from: Web3Service.state.account });
-    //  console.log(getTokenURI);
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
     this.setState({
       account: Web3Service.state.account,
       erc721Token: Web3Service.state.erc721Token,
     });
-<<<<<<< HEAD
-=======
-
     this.getDataSorce(getTokenURI);
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
+
   }
   currencyFormat(num) {
     return Intl.NumberFormat().format(num);
@@ -50,9 +42,6 @@ class AwardItem extends React.Component {
         window.location.reload();
       });
   }
-<<<<<<< HEAD
-  
-=======
   getDataSorce(dataset){
     var splitData = dataset.split(",");
     this.setState({
@@ -62,7 +51,6 @@ class AwardItem extends React.Component {
       address:this.state.account,
     })
   }
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
   render() {
     return (
       <>

@@ -9,11 +9,8 @@ import Abount from "./components/Abount";
 import Example from "./components/Example";
 import WriteContract721 from "./components/WriteContract721";
 import ReadContract721 from "./components/ReadContract721";
-<<<<<<< HEAD
 import BlockchainSimulator from "./components/BlockchainSimulator";
 import Hash from "./components/Hash";
-=======
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
 
 class App extends React.Component {
   async componentDidMount() {
@@ -58,13 +55,10 @@ class App extends React.Component {
         <Header />
         <Routes>
           <Route path="/" element={<ReadContract />} />
-<<<<<<< HEAD
           <Route path="/721" element={<ReadContract721 />} />
           <Route path="/write721" element={<WriteContract721/>}/>
-=======
           <Route path="/721" element={<WriteContract721 />} />
           <Route path="/read721" element={<ReadContract721 />} />
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
           <Route path="/write" element={<WriteContract />} />
           <Route path="/erc20" element={<Abount />} />
           <Route path="/example" element={<Example />} />

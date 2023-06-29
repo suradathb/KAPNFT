@@ -55,11 +55,7 @@ class WriteContract721 extends React.Component {
           </div>
         </div>
         <div className="col col-link">
-<<<<<<< HEAD
-          <Link className="link" to="/721">
-=======
           <Link className="link" to="/read721">
->>>>>>> 8b33904789fef39077bfa5d69eb03dbb2866b92b
             Read Contract
           </Link>
           <Link className="link" to="/write721">
